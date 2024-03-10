@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package common.questions;
+option go_package = "common/questions";
+
+enum QuestionType {
+  NONE = 0;
+  MULTI_CHOICE = 2;
+  OPEN_ANSWER = 1;
+}
+
+message MultiChoiceQuestion {
+  int32 points = 1;
+  repeated string option = 2;
+  string description = 3;
+}
+
+message OpenQuestion {
+  int32 points = 1;
+  string description = 2;
+}
+
+message Question {
+  string id = 1;
+  QuestionType type = 2;
+  oneof question {
+    MultiChoiceQuestion multiChoiceQuestion = 3;
+    OpenQuestion openQuestion = 4;
+  }
+}

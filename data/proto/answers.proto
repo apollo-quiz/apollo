@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package common.answers;
+option go_package = "common/answers";
+
+import "questions.proto";
+
+message MultiChoiceAnswer {
+  int32 answer = 1;
+}
+
+message OpenAnswer {
+  string answer = 1;
+}
+
+message Answer {
+  questions.QuestionType type = 1;
+  oneof question {
+    questions.MultiChoiceQuestion multiChoiceQuestion = 2;
+    questions.OpenQuestion openQuestion = 3;
+  }
+  oneof answer {
+    MultiChoiceAnswer multiChoiceAnswer = 4;
+    OpenAnswer openAnswer = 5;
+  }
+}

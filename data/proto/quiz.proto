@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package common.quiz;
+option go_package = "common/quiz";
+
+message Section {
+  string id = 1;
+  string title = 2;
+  repeated string questionIds = 3;
+}
+
+message Quiz {
+  string id = 1;
+  string title = 2;
+  repeated string sectionIds = 3;
+}
