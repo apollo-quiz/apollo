@@ -1,0 +1,39 @@
+openapi: 3.1.0
+info:
+  version: 1.0.0
+  title: Apollo Quiz API
+  contact:
+    email: r.i.kotsev@gmail.com
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+  x-logo:
+    url: https://raw.githubusercontent.com/apollo-quiz/apollo/master/documentation/logo.jpeg
+  description: |
+    This is an API related to setting up a quiz in the Apollo Quiz platform.
+tags:
+  - name: Quiz
+    description: Operations related to setting up and modifying a quiz
+  - name: Section
+    description: Operations related to setting up and modifying a section of a quiz
+  - name: Question
+    description: Operations related to setting up and modifying questions
+servers:
+  - url: https://apolloquiz.com/api/v1
+paths:
+  /quiz:
+    get:
+      $ref: paths/quiz/GET.yaml
+#    post:
+#      $ref: paths/quiz/POST.yaml
+#  /quiz/{id}:
+#    get:
+#      $ref: paths/quiz/{id}/GET.yaml
+#    put:
+#      $ref: paths/quiz/{id}/PUT.yaml
+components:
+  securitySchemes:
+    main_auth:
+      type: http
+      scheme: Bearer
+      bearerFormat: JWT

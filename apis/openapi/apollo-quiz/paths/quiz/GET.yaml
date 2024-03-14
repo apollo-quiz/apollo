@@ -1,0 +1,19 @@
+tags:
+  - Quiz
+summary: Retrieves all quizzes
+description: Returns a list of quizzes that are available to the user and provides a paging mechanism
+operationId: get-quiz
+security:
+  - main_auth: []
+responses:
+  '200':
+    description: OK
+    content:
+      application/json:
+        schema:
+          type: array
+          items:
+            $ref: ../../components/schemas/Quiz.yaml
+          maxLength: 3
+  '403':
+    description: Unauthorized

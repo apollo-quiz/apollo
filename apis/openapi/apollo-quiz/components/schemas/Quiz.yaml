@@ -1,0 +1,25 @@
+type: object
+properties:
+  quizId:
+    type: string
+    description: The unique identifier for the quiz
+    readOnly: true
+    examples:
+      - quiz_550e8400-e29b-41d4-a716-446655440000
+  title:
+    type: string
+    minLength: 10
+    maxLength: 255
+    examples:
+      - Lord of the Rings Theme Quiz
+      - Friends Knowledge Test
+  description:
+    type: string
+    maxLength: 1024
+    examples:
+      - |
+        Lord of the Rings is a book and TV series we have all grown to love. This quiz will be the time 
+        for you to show how much exactly you love it ;)
+required:
+  - title
+  - description

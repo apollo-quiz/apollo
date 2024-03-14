@@ -1,0 +1,12 @@
+{
+  "name": "apollo-quiz-openapi",
+  "version": "1.0.0",
+  "dependencies": {
+    "@redocly/cli": "1.10.3"
+  },
+  "scripts": {
+    "start": "redocly preview-docs",
+    "build": "redocly bundle -o dist/apollo-quiz-openapi.yaml",
+    "test": "redocly lint"
+  }
+}
